@@ -126,6 +126,8 @@ free(ptr);
 
 void del_loc_based()
 {
+if(last!=NULL)
+{
 int count=0,pos;
 printf("Enter the position\n");
 scanf("%d",&pos);
@@ -157,6 +159,9 @@ else
 {
 printf("Wrong location\n");
 }
+}
+else
+printf("List is empty\n");
 }
 
  void location_based()
