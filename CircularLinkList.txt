@@ -135,20 +135,24 @@ while(ptr!=last)
 count++;
 ptr=ptr->link;
 }
+count++;
 
 if(pos==1)
 del_beg();
-else if(pos>1&&pos<=count)
+else if(pos>1&&pos<count)
 {
 int i;
 ptr=last->link;
-for(i=1;i<pos-1;i++)
+for(i=1;i<pos;i++)
 {
 temp=ptr;
 ptr=ptr->link;
 }
 temp->link=ptr->link;
+free(ptr);
 }
+else if(pos==count)
+del_end();
 else
 {
 printf("Wrong location\n");
@@ -165,7 +169,7 @@ printf("Wrong location\n");
       count++;
       ptr=ptr->link;
      }
-     
+     count++;
 
 
      printf("Enter the position of the node\n");
@@ -279,4 +283,3 @@ void main()
        }
     }
 }
-
