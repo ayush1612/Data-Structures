@@ -221,7 +221,7 @@ void search_node()
    else
    {
    ptr=last->link;
-   while(ptr!=NULL)
+   while(ptr!=last)
    {
     if(item==ptr->data)
     {
