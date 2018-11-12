@@ -221,7 +221,7 @@ void search_node()
    else
    {
    ptr=last->link;
-   while(ptr!=last)
+   while(ptr!=NULL)
    {
     if(item==ptr->data)
     {
@@ -232,8 +232,6 @@ void search_node()
     else
     ptr=ptr->link;
     }
-    if(item==last->data)
-    flag=1;
     if(flag==0)
     printf("Item not found");
     }
