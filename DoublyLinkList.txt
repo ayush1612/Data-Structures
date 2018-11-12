@@ -210,7 +210,8 @@ void display()
          ptr=ptr->rlink;
          }
          temp->rlink=ptr->rlink;
-         ptr->llink=temp;
+         ptr->rlink->llink=temp;
+         free(ptr);
          }
          else
          printf("Wrong location\n");
