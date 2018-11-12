@@ -2,225 +2,174 @@
 #include<stdlib.h>
 struct node
 {
-int data;
-struct node *link;
-};
+ int data;
+ struct node *llink;
+ struct node *rlink;
+ };
 
-struct node *ptr=NULL,*last=NULL,*temp=NULL;
-
-void insert_beg()
-{
-temp=(struct node*)malloc(sizeof(struct node*));
-printf("Enter the data\n");
-scanf("%d",&temp->data);
-temp->link=NULL;
-if(last==NULL)
-{
-last=temp;
-temp->link=last;
-}
-else
-{
-temp->link=last->link;
-last->link=temp;
-}
-}
+ struct node *temp,*ptr,*head=NULL;
 
 void insert_end()
 {
-temp=(struct node*)malloc(sizeof(struct node*));
-printf("Enter the data\n");
-scanf("%d",&temp->data);
-temp->link=NULL;
-if(last==NULL)
-{
-last=temp;
-temp->link=last;
+ temp=(struct node*)malloc(sizeof(struct node*));
+ printf("Enter data\n");
+ scanf("%d",&temp->data);
+ temp->llink=NULL;
+ temp->rlink=NULL;
+
+ if(head==NULL)
+ {
+ head=temp;
+ }
+
+ else
+ {
+ ptr=head;
+ while(ptr->rlink!=NULL)
+ {
+ ptr=ptr->rlink;
+ }
+ ptr->rlink=temp;
+ temp->llink=ptr;
+ }
 }
-else
+void insert_beg()
 {
-temp->link=last->link;
-last->link=temp;
-last=temp;
+ temp=(struct node*)malloc(sizeof(struct node*));
+ printf("Enter the data\n");
+ scanf("%d",&temp->data);
+ temp->llink=NULL;
+ temp->rlink=NULL;
+
+ if(head==NULL)
+ head=temp;
+ else
+ {
+ temp->rlink=head;
+ head->llink=temp;
+ head=temp;
+ }
 }
+
+void insert_loc()
+{
+ int count=0,pos;
+ ptr=head;
+
+ while(ptr!=NULL)
+ {
+ count++;
+ ptr=ptr->rlink;
+ }
+ printf("Enter the position of the node\n");
+ scanf("%d",&pos);
+
+ if(pos==1)
+ insert_beg();
+ else if(pos==count+1)
+ insert_end();
+ else if(pos>1&&pos<=count)
+ {
+ temp=(struct node*)malloc(sizeof(struct node*));
+ printf("Enter the datan");
+ scanf("%d",&temp->data);
+ temp->llink=NULL;
+  temp->rlink=NULL;
+
+ ptr=head;
+ int i;
+ for(i=1;i<pos-1;i++)
+ {
+  ptr=ptr->rlink;
+  }
+  temp->rlink=ptr->rlink;
+  temp->llink=ptr;
+  ptr->rlink->llink=temp;
+  ptr->rlink=temp;
+ }
+ else
+ {
+ printf("Wrong location\n");
+ }
+}
+void del_beg()
+{
+  if(head==NULL)
+  printf("Linked list is empty\n");
+  else if(head->rlink==NULL)
+  head=NULL;
+  else
+  {
+  ptr=head;
+  head=head->rlink;
+  head->llink=NULL;
+  free(ptr);
+  }
+}
+
+void del_end()
+{
+ if(head==NULL)
+ printf("List is empty\n");
+ else if(head->rlink==NULL)
+ head=NULL;
+ else
+ {
+ ptr=head;
+ while(ptr->rlink!=NULL)
+ ptr=ptr->rlink;
+ 
+ temp=ptr;
+ (ptr->llink)->rlink=NULL;
+ free(temp);
+ }
 }
 
 void display()
 {
-if(last==NULL)
-{
-printf("List is empty");
-}
-else
-{
-ptr=last->link;
-while(ptr!=last)
-{
-printf("%d--> ",ptr->data);
-ptr=ptr->link;
-}
-printf("%d",ptr->data);
-}
-}
-
-void count_node()
-{
-int count=0;
-if(last==NULL)
-{
-printf("List is empty\n");
-}
-else
-{
-ptr=last->link;
-while(ptr!=last)
-{
-count++;
-ptr=ptr->link;
-}
-printf("No. of nodes=%d\n",(count+1));
-}
-}
-void del_beg()
-{
-if(last==NULL)
-{
-printf("List is empty\n");
-}
-else if(last->link==last)
-{
-ptr=last;
-last=NULL;
-free(ptr);
-}
-else
-{
-ptr=last->link;
-last->link=ptr->link;
-free(ptr);
-}
-}
-void del_end()
-{
-if(last==NULL)
-printf("List is empty\n");
-else if(last->link==last)
-{
-ptr=last;
-last=NULL;
-free(ptr);
-}
-else
-{
-ptr=last->link;
-while(ptr!=last)
-{
-temp=ptr;
-ptr=ptr->link;
-}
-temp->link=last->link;
-last=temp;
-free(ptr);
-}
-}
-
-void del_loc_based()
-{
-if(last!=NULL)
-{
-int count=0,pos;
-printf("Enter the position\n");
-scanf("%d",&pos);
-ptr=last->link;
-while(ptr!=last)
-{
-count++;
-ptr=ptr->link;
-}
-count++;
-
-if(pos==1)
-del_beg();
-else if(pos>1&&pos<count)
-{
-int i;
-ptr=last->link;
-for(i=1;i<pos;i++)
-{
-temp=ptr;
-ptr=ptr->link;
-}
-temp->link=ptr->link;
-free(ptr);
-}
-else if(pos==count)
-del_end();
-else
-{
-printf("Wrong location\n");
-}
-}
-else
-printf("List is empty\n");
-}
-
- void location_based()
-  {
-    int count=0,pos;
-    ptr=last->link;
-    
-    while(ptr!=last)
+    if(head==NULL)
+    printf("List is empty\n");
+    else
     {
-      count++;
-      ptr=ptr->link;
+    ptr=head;
+    while(ptr!=NULL)
+    { 
+      printf("%d-->",ptr->data);
+      ptr=ptr->rlink;
      }
-     count++;
-
-
-     printf("Enter the position of the node\n");
-     scanf("%d",&pos);
-     
-     if(pos==1)
-       insert_beg();
-       else
-       if(pos==count+1)
-       insert_end();
-       else
-       if(pos>1&&pos<=count)
-       {
-       temp=(struct node*)malloc(sizeof(struct node*));
-       printf("Enter the data\n");
-       
-       scanf("%d",&temp->data);
-       temp->link=NULL;
-       
-       ptr=last->link;
-       
-       int i;
-       for(i=1;i<pos-1;i++)
-       {
-       ptr=ptr->link;
-       }
-       
-       temp->link=ptr->link;
-       ptr->link=temp;
-       }
-       else
-       printf("Invalid Position\n");
-     }
-void search_node()
+   }
+}
+ 
+     void count_node()
+    {
+    int count=0;
+    if(head==NULL)
+    printf("List is empty");
+    else
+    {
+    ptr=head;
+    while(ptr!=NULL)
+    {
+    count++;
+    ptr=ptr->rlink;
+    }
+    printf("Count=%d",count);
+    }
+    }
+    
+ void search_node()
  {
  
  int item,flag=0;
  printf("Enter the data to be searched\n");
  scanf("%d",&item);
  
- if(last==NULL)
+ if(head==NULL)
    printf("List is empty\n");
    
    else
    {
-   ptr=last->link;
+   ptr=head;
    while(ptr!=NULL)
    {
     if(item==ptr->data)
@@ -230,18 +179,49 @@ void search_node()
     break;
     }
     else
-    ptr=ptr->link;
+    ptr=ptr->rlink;
     }
     if(flag==0)
     printf("Item not found");
     }
     }
     
+     void del_loc_based()
+       {
+         int count=0,pos;
+         printf("Enter the location\n");
+         scanf("%d",&pos);
+         ptr=head;
+         while(ptr!=NULL)
+         {
+         count++;
+         ptr=ptr->rlink;
+         }
+         
+         if(pos==1)
+         del_beg();
+         else if(pos>1&&pos<=count)
+         {
+         ptr=head;
+         int i;
+         for(i=1;i<pos;i++)
+         {
+         temp=ptr;
+         ptr=ptr->rlink;
+         }
+         temp->rlink=ptr->rlink;
+         ptr->llink=temp;
+         }
+         else
+         printf("Wrong location\n");
+       }
+   
+   
     
-void main()
-{
-
-  while(1)
+    
+  void main()
+     {
+       while(1)
        {
        int ch;
        printf("\n1.Insert_end\n2.Insert_beg\n3.Insert at loc\n4.Search node\n5.Display\n6.Count data nodes\n7.Delete_beginning\n8.Delete_end\n9.Delte_at_loc\n10.Exit\n");
@@ -256,7 +236,7 @@ void main()
        case 2:insert_beg();
        break;
        
-       case 3:location_based();
+       case 3:insert_loc();
        break;
        
        case 4:search_node();
@@ -278,13 +258,14 @@ void main()
        case 9:
        del_loc_based();
        break;
-       
+      
        case 10:
-       exit(1);
+       exit(0);
        
        default:
        printf("Wrong choice");
        
-       }
+       
+    }
     }
 }
