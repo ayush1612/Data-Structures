@@ -36,7 +36,7 @@ void deQueue()
         
     }
 }
-void DISPLAY()
+void display()
 {
     if(rear==-1)
     printf("Underflow!\n");
