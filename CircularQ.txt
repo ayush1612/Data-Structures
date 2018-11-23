@@ -45,7 +45,14 @@ void display()
     for(i=front;i<=rear;i++)
         printf("%d-->",Q[i]);
     }
-
+    else
+    {
+    for(i=front;i<SIZE;i++)
+       printf("%d-->",Q[i]);
+    for(i=0;i<=rear;i++)
+       printf("%d-->",Q[i]);
+    }
+}
 void main()
 {
 int ch;
