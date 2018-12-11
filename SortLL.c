@@ -246,14 +246,52 @@ int item;
          }
          head=prev;
          }
-   
+         
+         void sort()
+         {
+          NODE *prev=head,*current=head,*temp=NULL;
+          int count=0,i,j,temp;
+          if(head==NULL)
+            printf("List is empty\n");
+          else
+          {
+           ptr=head;
+           while(ptr!=NULL)
+           {
+           count++;
+           ptr=ptr->link;
+           }
+           
+           ptr=head;
+           for(i=0;i<=count;i++)
+           {
+             for(j=1;j<=count-i;j++)
+             {
+             while(ptr->link!=NULL)
+             {
+             if(ptr->data>ptr->link->data)
+             {
+               temp=ptr->data;
+               ptr->data=ptr->link->data;
+               ptr->link->data=temp;
+               }
+               ptr=ptr->link;
+               }
+             }
+             ptr=head;
+         }
+         }
+         }
+         
+            
+   	    	
    
      void main()
      {
        while(1)
        {
        int ch;
-       printf("\n1.Insert_end\n2.Insert_beg\n3.Insert at loc\n4.Search node\n5.Display\n6.Count data nodes\n7.Delete_beginning\n8.Delete_end\n9.Delte_at_loc\n10.Reverse\n11.Exit\n");
+       printf("\n1.Insert_end\n2.Insert_beg\n3.Insert at loc\n4.Search node\n5.Display\n6.Count data nodes\n7.Delete_beginning\n8.Delete_end\n9.Delte_at_loc\n10.Reverse\n11.Sort\n12.Exit\n");
        printf("Enter your choice \n");
        scanf("%d",&ch);
        
@@ -293,7 +331,10 @@ int item;
        break;
        
        case 11:
-       exit(1);
+       sort();
+       break;
+       
+       case 12:exit(1);
        
        
        default:
@@ -303,3 +344,4 @@ int item;
     }
     }
     }
+    
