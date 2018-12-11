@@ -27,7 +27,7 @@ void create()
 		if(curr->data==temp->data)
 		{
 			printf("Node exist\n");
-			break;
+			return;
 		}
 		else if(curr->data<temp->data)
 			curr=curr->rchild;
@@ -79,7 +79,7 @@ void main()
 	   printf("Do you want to add data.Press 1 for yes .Press 2 for no\n");	
 	   scanf("%d",&ch);
 	   if(ch==2)
-	   break;
+	   	break;
 	   create();
 	}
 	printf("Inorder:");
@@ -89,4 +89,3 @@ void main()
 	printf("\nPostorder");
 	postorder(root);
 }
-
