@@ -106,5 +106,4 @@ void main()
     preorder(root);
     printf("\nThe postorder traversal is:\n");
     postorder(root);
-
 }
