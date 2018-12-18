@@ -17,7 +17,7 @@ void main()
 	
 	for(i=0;i<size;i++)
 	{
-		for(j=0;j<size-i-1;j++)
+		for(j=i+1;j<size-i-1;j++)
 		{
 			if(arr[j]>arr[j+1])
 			{
