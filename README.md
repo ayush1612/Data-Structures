@@ -21,7 +21,7 @@ c. Display
 a. Inserting a node(Beginning, End & Given any desired position)
 b. Deleting a node (Beginning, End & Given any desired position )
 c. Display
-9. [To insert a given element into an ordered doubly linked list.](https://github.com/ayush1612/Data-Structures/blob/q/ordered_Doubly_linklist.c)
+9. [To insert a given element into an ordered doubly linked list.](https://github.com/ayush1612/Data-Structures.git)
 10. [Binary tree operations:](https://github.com/ayush1612/Data-Structures/blob/q/BinaryTree.c)
 a. Creation
 b. Traversal(Inorder, Preorder and Postorder)
