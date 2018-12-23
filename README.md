@@ -27,3 +27,5 @@ a. Creation
 b. Traversal(Inorder, Preorder and Postorder)
 11. [Creation of Binary Search tree.](https://github.com/ayush1612/Data-Structures/blob/q/BinarySearchTree.c)
 12. Create an expression tree and evaluate it.
+
+**I would :heart: if you pull request on finding any _BUG_ in the program**
