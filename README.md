@@ -13,7 +13,7 @@ It covers basically the Data Structure Programs I did in my 3rd semester in Engi
 a. Inserting a node(Beginning, End & Given any desired position)
 b. Deleting a node (Beginning, End & Given any desired position )
 c. Display
-7. [Circular Linked List with the following operations:](https://github.com/ayush1612/Data-Structures/blob/q/CircularLinkList.c)
+7. [Circular Linked List with the following operations:](https://github.com/ayush1612/Data-Structures/blob/master/CircularQ.c)
 a. Inserting a node(Beginning, End & Given any desired position)
 b. Deleting a node (Beginning, End & Given any desired position )
 c. Display
