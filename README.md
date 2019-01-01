@@ -6,8 +6,8 @@ It covers basically the Data Structure Programs I did in my 3rd semester in Engi
 
 1. [Conversion of a valid Infix expression to Postfix Expression using stacks.](https://github.com/ayush1612/Data-Structures/blob/master/convert_expression.c)
 2. [Evaluation of a valid Postfix expression using stacks.](https://github.com/ayush1612/Data-Structures/blob/master/postfix.c)
-3. [Recursion: Tower of Hanoi problem for n disks using recursion, Binary search and GCD.](https://github.com/ayush1612/Data-Structures/blob/master/toh.c)
-4. [Linear queue and its primitive operations with supportive display() function.](https://github.com/ayush1612/Data-Structures/blob/master/LinearQ.c)
+3. [Recursion: Tower of Hanoi problem for n disks using recursion](, [GCD](https://github.com/ayush1612/Data-Structures/blob/master/GCD_recursive.c) and [Binary Search](https://github.com/ayush1612/Data-Structures/blob/master/bs_rec.c)
+4. [Linear queue and its primitive operations with supportive display() functhttps://github.com/ayush1612/Data-Structures/blob/master/toh.c)ion.](https://github.com/ayush1612/Data-Structures/blob/master/LinearQ.c)
 5. [Circular queue and its operations with supportive display() function.](https://github.com/ayush1612/Data-Structures/blob/master/CircularQ.c)
 6. [Singly Linked List with the following operations:](https://github.com/ayush1612/Data-Structures/blob/master/SinglyLinkList.c)
 a. Inserting a node(Beginning, End & Given any desired position)
