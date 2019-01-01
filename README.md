@@ -9,7 +9,7 @@ It covers basically the Data Structure Programs I did in my 3rd semester in Engi
 3. [Recursion: Tower of Hanoi problem for n disks using recursion, Binary search and GCD.](https://github.com/ayush1612/Data-Structures/blob/master/toh.c)
 4. [Linear queue and its primitive operations with supportive display() function.](https://github.com/ayush1612/Data-Structures/blob/master/LinearQ.c)
 5. [Circular queue and its operations with supportive display() function.](https://github.com/ayush1612/Data-Structures/blob/master/CircularQ.c)
-6. [Singly Linked List with the following operations:](https://github.com/ayush1612/Data-Structures/blob/q/SinglyLinkList.c)
+6. [Singly Linked List with the following operations:](https://github.com/ayush1612/Data-Structures/blob/master/SinglyLinkList.c)
 a. Inserting a node(Beginning, End & Given any desired position)
 b. Deleting a node (Beginning, End & Given any desired position )
 c. Display
